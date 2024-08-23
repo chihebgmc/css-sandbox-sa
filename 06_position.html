@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position</title>
+    <style>
+      body {
+        height: 4000px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 5px;
+      }
+
+      .container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: #333;
+      }
+
+      .box-1 {
+        position: static; /* static: default, not affected by tblr(top, bottom, left, right) properties/value */
+        background-color: red;
+      }
+      .box-2 {
+        position: relative; /* relative: tblr values cause element to be moved from its normal position */
+        top: 100px;
+        left: 100px;
+        background-color: yellow;
+        z-index: 2;
+      }
+      .box-3 {
+        position: absolute; /* absolute: positioned relative to its parent element that is positioned "relative" */
+
+        bottom: 100px;
+        right: 100px;
+        background-color: green;
+      }
+      .box-4 {
+        position: fixed; /*  fixed: positioned relative to the viewport */
+        background-color: blue;
+        bottom: 50px;
+        right: 50px;
+      }
+      .box-5 {
+        position: sticky; /* sticky: positioned based on scroll position */
+        top: 80px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="container">
+      <div class="box box-3"></div>
+    </div>
+    <div class="box box-4"></div>
+    <div class="box box-5"></div>
+  </body>
+</html>
